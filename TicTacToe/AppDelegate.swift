@@ -2,9 +2,6 @@
 //  AppDelegate.swift
 //  TicTacToe
 //
-//  Created by Pratap on 28/05/19.
-//  Copyright © 2019 IOS. All rights reserved.
-//
 
 import UIKit
 

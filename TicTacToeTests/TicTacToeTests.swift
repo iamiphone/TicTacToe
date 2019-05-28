@@ -2,9 +2,6 @@
 //  TicTacToeTests.swift
 //  TicTacToeTests
 //
-//  Created by Pratap on 28/05/19.
-//  Copyright © 2019 IOS. All rights reserved.
-//
 
 import XCTest
 @testable import TicTacToe
@@ -30,5 +27,68 @@ class TicTacToeTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
+    
+    func testCreatePlayerOne() {
+        
+    }
+    
+    func testCreatePlayerTwo() {
+        
+    }
+    
+    func testCreateGameLogic() {
+        
+    }
+    
+    func testBoardSlots() {
+        
+    }
+    
+    func testInitialMovePlayedByPlayerOne() {
+        
+    }
+    
+    func testWinningPossibilitiesOfHorizontalRow1() {
+        
+    }
+    
+    func testWinningPossibilitiesOfHorizontalRow2() {
+        
+    }
+    
+    func testWinningPossibilitiesOfHorizontalRow3() {
+        
+    }
+    
+    func testWinningPossibilitiesOfVerticalRow1() {
+        
+    }
+    
+    func testWinningPossibilitiesOfVerticalRow2() {
+        
+    }
+    
+    func testWinningPossibilitiesOfVerticalRow3() {
+    
+    }
+    
+    func testWinningPossibilitiesOfDiagonalRow1() {
+        
+    }
+    
+    func testWinningPossibilitiesOfDiagonalRow2() {
+        
+    }
+    
+    func test_MatchDrawn() {
+        
+    }
+    
+    func test_CheckPlayerSlotsCount() {
+        
+    }
+    
+    func test_ResetBothPlayerMoves() {
+        
+    }
 }
