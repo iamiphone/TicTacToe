@@ -18,7 +18,7 @@ struct GameLogic {
     let maximumBoxPosition = 8
     var activePlayer = false
     var randomSelection = false
-
+    
     var playerOne = Player()
     var playerTwo = Player()
     
@@ -29,7 +29,7 @@ struct GameLogic {
     mutating func isSlotSelectByRandom() {
         randomSelection = true
     }
-
+    
     // Start Game
     mutating func startGame() -> String {
         for index in minimumBoxPosition...maximumBoxPosition {
@@ -56,7 +56,7 @@ struct GameLogic {
         return MATCH_DRAWN
     }
     
-    // check player was WON Game
+    // Check player was WON Game
     mutating func isWinner(player: Player) -> Bool {
         var matched = false
         for win in winArr {
@@ -70,7 +70,7 @@ struct GameLogic {
         return matched
     }
     
-    // Clear selected player all moves
+    // Remove all selected player slots
     mutating func reset() {
         playerOne.moves.removeAll()
         playerTwo.moves.removeAll()

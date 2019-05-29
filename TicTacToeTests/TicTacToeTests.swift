@@ -12,7 +12,7 @@ class TicTacToeTests: XCTestCase {
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-
+    
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
@@ -126,7 +126,7 @@ class TicTacToeTests: XCTestCase {
         XCTAssertEqual(0,game.playerOne.slotsCount())
         XCTAssertEqual(0,game.playerTwo.slotsCount())
     }
-
+    
     func testStartGameByRandomSlots() {
         game.isSlotSelectByRandom()
         let gameResult = game.startGame()

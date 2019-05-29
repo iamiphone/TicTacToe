@@ -8,12 +8,13 @@ import UIKit
 class ViewController: UIViewController,PlayerSelectedSlotDelegate {
     
     @IBOutlet weak var lblResult: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         clearBoardContent()
     }
-
+    
     @IBAction func startButtonPressed(_ sender: Any) {
         clearBoardContent()
         var game = GameLogic()
@@ -29,7 +30,7 @@ class ViewController: UIViewController,PlayerSelectedSlotDelegate {
         lblResult.text = ""
     }
     
-    //  clear board content 1 to 9 boxes
+    // clear board content boxes
     func clearBoardContent() {
         for index in 501...509 {
             let tmpButton1 = self.view.viewWithTag(index) as? UIButton
@@ -43,4 +44,3 @@ class ViewController: UIViewController,PlayerSelectedSlotDelegate {
         tmpButton2?.setTitle(player, for: .normal)
     }
 }
-

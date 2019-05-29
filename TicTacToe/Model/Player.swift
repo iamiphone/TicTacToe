@@ -13,7 +13,7 @@ struct Player {
         return self.moves.append(position)
     }
     
-    // Player Choosed Positions count
+    // Player Selected Positions count
     mutating func slotsCount() -> Int {
         return moves.count
     }
