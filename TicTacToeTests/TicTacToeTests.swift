@@ -8,9 +8,7 @@ import XCTest
 
 class TicTacToeTests: XCTestCase {
     var game = GameLogic()
-    var playerOne = Player()
-    var playerTwo = Player()
-
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -20,11 +18,11 @@ class TicTacToeTests: XCTestCase {
     }
     
     func testCreatePlayerOne() {
-        XCTAssertNotNil(playerOne)
+        XCTAssertNotNil(game.playerOne)
     }
     
     func testCreatePlayerTwo() {
-        XCTAssertNotNil(playerTwo)
+        XCTAssertNotNil(game.playerTwo)
     }
     
     func testCreateGameLogic() {
@@ -42,91 +40,114 @@ class TicTacToeTests: XCTestCase {
     }
     
     func testWinningPossibilitiesOfHorizontalRow1() {
-        playerOne.addSlot(1)
-        playerOne.addSlot(2)
-        playerOne.addSlot(3)
-        XCTAssertTrue(game.isWinner(player: playerOne))
+        game.playerOne.addSlot(1)
+        game.playerOne.addSlot(2)
+        game.playerOne.addSlot(3)
+        XCTAssertTrue(game.isWinner(player: game.playerOne))
     }
     
     func testWinningPossibilitiesOfHorizontalRow2() {
-        playerOne.addSlot(4)
-        playerOne.addSlot(5)
-        playerOne.addSlot(6)
-        XCTAssertTrue(game.isWinner(player: playerOne))
+        game.playerOne.addSlot(4)
+        game.playerOne.addSlot(5)
+        game.playerOne.addSlot(6)
+        XCTAssertTrue(game.isWinner(player: game.playerOne))
     }
     
     func testWinningPossibilitiesOfHorizontalRow3() {
-        playerTwo.addSlot(7)
-        playerTwo.addSlot(8)
-        playerTwo.addSlot(9)
-        XCTAssertTrue(game.isWinner(player: playerTwo))
+        game.playerTwo.addSlot(7)
+        game.playerTwo.addSlot(8)
+        game.playerTwo.addSlot(9)
+        XCTAssertTrue(game.isWinner(player: game.playerTwo))
     }
     
     func testWinningPossibilitiesOfVerticalRow1() {
-        playerOne.addSlot(1)
-        playerOne.addSlot(4)
-        playerOne.addSlot(7)
-        XCTAssertTrue(game.isWinner(player: playerOne))
+        game.playerOne.addSlot(1)
+        game.playerOne.addSlot(4)
+        game.playerOne.addSlot(7)
+        XCTAssertTrue(game.isWinner(player: game.playerOne))
     }
     
     func testWinningPossibilitiesOfVerticalRow2() {
-        playerOne.addSlot(2)
-        playerOne.addSlot(5)
-        playerOne.addSlot(8)
-        XCTAssertTrue(game.isWinner(player: playerOne))
+        game.playerOne.addSlot(2)
+        game.playerOne.addSlot(5)
+        game.playerOne.addSlot(8)
+        XCTAssertTrue(game.isWinner(player: game.playerOne))
     }
     
     func testWinningPossibilitiesOfVerticalRow3() {
-        playerTwo.addSlot(3)
-        playerTwo.addSlot(6)
-        playerTwo.addSlot(9)
-        XCTAssertTrue(game.isWinner(player: playerTwo))
+        game.playerTwo.addSlot(3)
+        game.playerTwo.addSlot(6)
+        game.playerTwo.addSlot(9)
+        XCTAssertTrue(game.isWinner(player: game.playerTwo))
     }
     
     func testWinningPossibilitiesOfDiagonalRow1() {
-        playerOne.addSlot(1)
-        playerOne.addSlot(5)
-        playerOne.addSlot(9)
-        XCTAssertTrue(game.isWinner(player: playerOne))
+        game.playerOne.addSlot(1)
+        game.playerOne.addSlot(5)
+        game.playerOne.addSlot(9)
+        XCTAssertTrue(game.isWinner(player: game.playerOne))
     }
     
     func testWinningPossibilitiesOfDiagonalRow2() {
-        playerTwo.addSlot(3)
-        playerTwo.addSlot(5)
-        playerTwo.addSlot(7)
-        XCTAssertTrue(game.isWinner(player: playerTwo))
+        game.playerTwo.addSlot(3)
+        game.playerTwo.addSlot(5)
+        game.playerTwo.addSlot(7)
+        XCTAssertTrue(game.isWinner(player: game.playerTwo))
     }
     
     func test_MatchDrawn() {
-        playerOne.addSlot(6)
-        playerTwo.addSlot(7)
-        playerOne.addSlot(2)
-        playerTwo.addSlot(3)
-        playerOne.addSlot(5)
-        playerTwo.addSlot(4)
-        playerOne.addSlot(1)
-        playerTwo.addSlot(8)
-        playerOne.addSlot(9)
-        XCTAssertFalse(game.isWinner(player: playerTwo))
+        game.playerOne.addSlot(6)
+        game.playerTwo.addSlot(7)
+        game.playerOne.addSlot(2)
+        game.playerTwo.addSlot(3)
+        game.playerOne.addSlot(5)
+        game.playerTwo.addSlot(4)
+        game.playerOne.addSlot(1)
+        game.playerTwo.addSlot(8)
+        game.playerOne.addSlot(9)
+        XCTAssertFalse(game.isWinner(player: game.playerTwo))
     }
     
     func test_CheckPlayerSlotsCount() {
-        playerOne.addSlot(6)
-        playerTwo.addSlot(7)
-        playerOne.addSlot(2)
-        playerTwo.addSlot(3)
-        XCTAssertEqual(2,playerOne.slotsCount())
-        XCTAssertEqual(2,playerTwo.slotsCount())
+        game.playerOne.addSlot(6)
+        game.playerTwo.addSlot(7)
+        game.playerOne.addSlot(2)
+        game.playerTwo.addSlot(3)
+        XCTAssertEqual(2,game.playerOne.slotsCount())
+        XCTAssertEqual(2,game.playerTwo.slotsCount())
     }
     
     func test_ResetBothPlayerMoves() {
-        playerOne.addSlot(6)
-        playerTwo.addSlot(7)
-        playerOne.addSlot(2)
-        playerTwo.addSlot(3)
-        playerOne.reset()
-        playerTwo.reset()
-        XCTAssertEqual(0,playerOne.slotsCount())
-        XCTAssertEqual(0,playerTwo.slotsCount())
+        game.playerOne.addSlot(6)
+        game.playerTwo.addSlot(7)
+        game.playerOne.addSlot(2)
+        game.playerTwo.addSlot(3)
+        game.reset()
+        XCTAssertEqual(0,game.playerOne.slotsCount())
+        XCTAssertEqual(0,game.playerTwo.slotsCount())
+    }
+
+    func testStartGameByRandomSlots() {
+        game.isSlotSelectByRandom()
+        let gameResult = game.startGame()
+        switch gameResult {
+        case PLAYER_ONE_WON:
+            XCTAssertEqual(gameResult, PLAYER_ONE_WON)
+        case PLAYER_TWO_WON:
+            XCTAssertEqual(gameResult, PLAYER_TWO_WON)
+        default:
+            XCTAssertEqual(gameResult, MATCH_DRAWN)
+        }
+    }
+    
+    func testPlyerOneWon() {
+        game.isInitialStepMovedByPlayerOne()
+        let gameResult = game.startGame()
+        XCTAssertEqual(gameResult, PLAYER_ONE_WON)
+    }
+    
+    func testPlyerTwoWon() {
+        let gameResult = game.startGame()
+        XCTAssertEqual(gameResult, PLAYER_TWO_WON)
     }
 }

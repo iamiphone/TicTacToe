@@ -17,9 +17,4 @@ struct Player {
     mutating func slotsCount() -> Int {
         return moves.count
     }
-    
-    // Clear selected player all moves
-    mutating func reset() {
-        moves.removeAll()
-    }
 }
