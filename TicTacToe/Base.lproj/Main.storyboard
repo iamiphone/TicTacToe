@@ -24,86 +24,122 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nn6-xh-WDM">
                                 <rect key="frame" x="97" y="338" width="220" height="220"/>
                                 <subviews>
-                                    <button opaque="NO" tag="501" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zbh-Fo-FPC">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zbh-Fo-FPC" customClass="DesignableButton" customModule="TicTacToe" customModuleProvider="target">
                                         <rect key="frame" x="10" y="10" width="60" height="60"/>
-                                        <color key="backgroundColor" red="0.34855246159999997" green="0.83160775590000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="topLeft"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="buP-6N-hld"/>
                                             <constraint firstAttribute="height" constant="60" id="jRF-yp-KYH"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <connections>
+                                            <action selector="selectPlayerPosition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WlS-Dz-J2i"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="502" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Asq-WP-mkt">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Asq-WP-mkt" customClass="DesignableButton" customModule="TicTacToe" customModuleProvider="target">
                                         <rect key="frame" x="80" y="10" width="60" height="60"/>
-                                        <color key="backgroundColor" red="0.34855246159999997" green="0.83160775590000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="topCenter"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="42W-dB-ssg"/>
                                             <constraint firstAttribute="height" constant="60" id="faE-3h-b1C"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <connections>
+                                            <action selector="selectPlayerPosition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2VK-4x-j4o"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="503" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uyw-Ei-lJQ">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uyw-Ei-lJQ" customClass="DesignableButton" customModule="TicTacToe" customModuleProvider="target">
                                         <rect key="frame" x="150" y="10" width="60" height="60"/>
-                                        <color key="backgroundColor" red="0.34855246159999997" green="0.83160775590000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="topRight"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="XcW-S8-JWa"/>
                                             <constraint firstAttribute="height" constant="60" id="ulk-O1-7VJ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <connections>
+                                            <action selector="selectPlayerPosition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dPu-jo-owU"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="504" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJi-yC-UGA">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJi-yC-UGA" customClass="DesignableButton" customModule="TicTacToe" customModuleProvider="target">
                                         <rect key="frame" x="10" y="80" width="60" height="60"/>
-                                        <color key="backgroundColor" red="0.34855246159999997" green="0.83160775590000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="centerLeft"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="542-ym-7yK"/>
                                             <constraint firstAttribute="width" constant="60" id="P0P-Qb-XNR"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <connections>
+                                            <action selector="selectPlayerPosition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R5f-Fu-esQ"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="505" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1X-Ce-b2c">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1X-Ce-b2c" customClass="DesignableButton" customModule="TicTacToe" customModuleProvider="target">
                                         <rect key="frame" x="80" y="80" width="60" height="60"/>
-                                        <color key="backgroundColor" red="0.34855246159999997" green="0.83160775590000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="centerCenter"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="Alf-3T-5Pd"/>
                                             <constraint firstAttribute="height" constant="60" id="vxv-kG-uAM"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <connections>
+                                            <action selector="selectPlayerPosition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JrS-Xg-wYi"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="506" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lv-80-2x9">
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lv-80-2x9" customClass="DesignableButton" customModule="TicTacToe" customModuleProvider="target">
                                         <rect key="frame" x="150" y="80" width="60" height="60"/>
-                                        <color key="backgroundColor" red="0.34855246159999997" green="0.83160775590000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="centerRight"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="F7r-xS-b62"/>
                                             <constraint firstAttribute="width" constant="60" id="Iik-DE-w13"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <connections>
+                                            <action selector="selectPlayerPosition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f9x-Dq-WAw"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="507" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s19-8h-Kd9">
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s19-8h-Kd9" customClass="DesignableButton" customModule="TicTacToe" customModuleProvider="target">
                                         <rect key="frame" x="10" y="150" width="60" height="60"/>
-                                        <color key="backgroundColor" red="0.34855246159999997" green="0.83160775590000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="bottomLeft"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="jOc-5i-MDr"/>
                                             <constraint firstAttribute="height" constant="60" id="mhX-rM-WbO"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <connections>
+                                            <action selector="selectPlayerPosition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nyR-7v-iJg"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="508" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZo-97-klS">
+                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZo-97-klS" customClass="DesignableButton" customModule="TicTacToe" customModuleProvider="target">
                                         <rect key="frame" x="80" y="150" width="60" height="60"/>
-                                        <color key="backgroundColor" red="0.34855246159999997" green="0.83160775590000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="bottomCenter"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="dj0-U9-h6w"/>
                                             <constraint firstAttribute="width" constant="60" id="hPX-ZM-657"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <connections>
+                                            <action selector="selectPlayerPosition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BiV-TE-v6V"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="509" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWJ-og-mRo">
+                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWJ-og-mRo" customClass="DesignableButton" customModule="TicTacToe" customModuleProvider="target">
                                         <rect key="frame" x="150" y="150" width="60" height="60"/>
-                                        <color key="backgroundColor" red="0.34855246159999997" green="0.83160775590000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="bottomRight"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="ftb-Eq-UoM"/>
                                             <constraint firstAttribute="width" constant="60" id="rJ6-1h-I2e"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <connections>
+                                            <action selector="selectPlayerPosition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2gG-gn-blJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -138,39 +174,32 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wbw-7u-m5O">
-                                <rect key="frame" x="97" y="567" width="220" height="80"/>
+                                <rect key="frame" x="97" y="565.5" width="220" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqp-Tv-kfe">
-                                        <rect key="frame" x="85" y="0.0" width="50" height="18"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <rect key="frame" x="10" y="0.0" width="200" height="18"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="resultLabel"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ob4-O9-atf">
-                                        <rect key="frame" x="38" y="38" width="144" height="42"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kV-v6-Oru">
-                                                <rect key="frame" x="0.0" y="0.0" width="62" height="42"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <state key="normal" title="Start"/>
-                                                <connections>
-                                                    <action selector="startButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ULy-fH-ZdO"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbt-S0-bdg">
-                                                <rect key="frame" x="82" y="0.0" width="62" height="42"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <state key="normal" title="Reset"/>
-                                                <connections>
-                                                    <action selector="resetButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8TN-FC-q0t"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kV-v6-Oru">
+                                        <rect key="frame" x="10" y="38" width="200" height="42"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="startButton"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="START"/>
+                                        <connections>
+                                            <action selector="startButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ULy-fH-ZdO"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="5T5-Bk-vWm"/>
                                     <constraint firstAttribute="height" constant="80" id="B2g-to-x8Q"/>
+                                    <constraint firstItem="Zqp-Tv-kfe" firstAttribute="leading" secondItem="wbw-7u-m5O" secondAttribute="leading" constant="10" id="DlZ-di-EHL"/>
+                                    <constraint firstItem="3kV-v6-Oru" firstAttribute="leading" secondItem="wbw-7u-m5O" secondAttribute="leading" constant="10" id="Feh-0y-xb2"/>
+                                    <constraint firstAttribute="trailing" secondItem="3kV-v6-Oru" secondAttribute="trailing" constant="10" id="YF1-pV-OU9"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zqp-Tv-kfe" secondAttribute="trailing" constant="10" id="ny4-g4-f5g"/>
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIC TAC TOE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PV5-iB-2fc">
@@ -191,7 +220,7 @@
                             <constraint firstItem="Nn6-xh-WDM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IDf-3W-gdn"/>
                             <constraint firstItem="Nn6-xh-WDM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mJ4-08-Sbg"/>
                             <constraint firstItem="PV5-iB-2fc" firstAttribute="centerX" secondItem="Nn6-xh-WDM" secondAttribute="centerX" id="pMH-2h-434"/>
-                            <constraint firstItem="wbw-7u-m5O" firstAttribute="firstBaseline" secondItem="Nn6-xh-WDM" secondAttribute="baseline" constant="30.5" symbolType="layoutAnchor" id="xqU-Gg-3wD"/>
+                            <constraint firstItem="wbw-7u-m5O" firstAttribute="firstBaseline" secondItem="Nn6-xh-WDM" secondAttribute="baseline" constant="25.5" symbolType="layoutAnchor" id="xqU-Gg-3wD"/>
                         </constraints>
                     </view>
                     <connections>

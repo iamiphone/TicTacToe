@@ -5,42 +5,62 @@
 
 import UIKit
 
-class ViewController: UIViewController,PlayerSelectedSlotDelegate {
+class ViewController: UIViewController {
     
     @IBOutlet weak var lblResult: UILabel!
+    var game = GameLogic()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        clearBoardContent()
+        lblResult.text = playerHasToMove()
     }
     
     @IBAction func startButtonPressed(_ sender: Any) {
         clearBoardContent()
-        var game = GameLogic()
-        game.delegate = self as PlayerSelectedSlotDelegate
-        game.isInitialStepMovedByPlayerOne()
-        game.isSlotSelectByRandom()
-        lblResult.text = "\(game.startGame())"
-        game.reset()
-    }
-    
-    @IBAction func resetButtonPressed(_ sender: Any) {
-        clearBoardContent()
-        lblResult.text = ""
     }
     
     // clear board content boxes
     func clearBoardContent() {
-        for index in 501...509 {
-            let tmpButton1 = self.view.viewWithTag(index) as? UIButton
-            tmpButton1?.setTitle(SELECTED_SLOT_NONE, for: .normal)
+        for index in START_TAG...END_TAG {
+            let btnSlot = self.view.viewWithTag(index) as? DesignableButton
+            btnSlot?.clearButtonContent(btnSlot!)
+        }
+        game.reset()
+        lblResult.text = playerHasToMove()
+    }
+    
+    @IBAction func selectPlayerPosition(_ sender: DesignableButton) {
+        sender.selectedButtonIndex(index: sender.tag, player: game.getCurrentPlayerString())
+        game.turnMove(selectedPosition: (sender.tag))
+        
+        game.isWinner(player: (game.isCurrentPlayerX) ? game.playerX : game.playerO)
+        
+        if game.isGameComplted {
+            lblResult.text = playerWon()
+            gameFinished()
+        } else {
+            game.isCurrentPlayerX.toggle()
+            if(game.isAvailableGameDraw()) {
+                lblResult.text = MATCH_DRAWN
+            } else {
+                lblResult.text = playerHasToMove()
+            }
         }
     }
     
-    // PlayerSelectedSlotDelegate method implementation
-    func selectedSlotPositionByPlayer(position: Int, player: String) {
-        let tmpButton2 = self.view.viewWithTag(500+position) as? UIButton
-        tmpButton2?.setTitle(player, for: .normal)
+    func gameFinished() {
+        for index in START_TAG...END_TAG {
+            let btnSlot = self.view.viewWithTag(index) as? DesignableButton
+            btnSlot?.isUserInteractionEnabled = false
+        }
+    }
+    
+    func playerHasToMove() -> String {
+        return "Player-\(game.getCurrentPlayerString()) Turn ✅"
+    }
+    
+    func playerWon() -> String {
+        return "Player-\(game.getCurrentPlayerString()) has WON 👍"
     }
 }
