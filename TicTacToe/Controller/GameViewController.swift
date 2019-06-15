@@ -1,11 +1,11 @@
 //
-//  ViewController.swift
+//  GameViewController.swift
 //  TicTacToe
 //
 
 import UIKit
 
-class ViewController: UIViewController, GameBoardResultDelegate {
+class GameViewController: UIViewController, GameBoardResultDelegate {
     
     @IBOutlet weak var lblResult: UILabel!
     var game = GameLogic()

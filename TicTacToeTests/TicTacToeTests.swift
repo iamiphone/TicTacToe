@@ -24,23 +24,18 @@ class TicTacToeTests: XCTestCase {
     func testPlayerCannotPlayOnPlayedPosition() {
         // Player X has to move
         game.turnMove(selectedPosition: 1)
-        game.isCurrentPlayerX.toggle()
         
         // Player O has to move
         game.turnMove(selectedPosition: 2)
-        game.isCurrentPlayerX.toggle()
         
         // Player X has to move
         game.turnMove(selectedPosition: 3)
-        game.isCurrentPlayerX.toggle()
         
         // Player O has to move
         game.turnMove(selectedPosition: 4)
-        game.isCurrentPlayerX.toggle()
         
         // Player X has to move
         game.turnMove(selectedPosition: 5)
-        game.isCurrentPlayerX.toggle()
         
         // Player X has 3 moves, Player O has 2 moves
         XCTAssertTrue(game.playerX.moves.count == 3)
@@ -50,43 +45,30 @@ class TicTacToeTests: XCTestCase {
     func testGameWonByPlayerX() {
         // Player X has to move
         game.turnMove(selectedPosition: 1)
-        game.isCurrentPlayerX.toggle()
         
         // Player O has to move
         game.turnMove(selectedPosition: 3)
-        game.isCurrentPlayerX.toggle()
         
         // Player X has to move
         game.turnMove(selectedPosition: 5)
-        game.isCurrentPlayerX.toggle()
         
         // Player O has to move
         game.turnMove(selectedPosition: 9)
-        game.isCurrentPlayerX.toggle()
         
         // Player X has to move
         game.turnMove(selectedPosition: 6)
-        game.isCurrentPlayerX.toggle()
         
         // Player O has to move
         game.turnMove(selectedPosition: 4)
-        game.isCurrentPlayerX.toggle()
         
         // Player X has to move
         game.turnMove(selectedPosition: 8)
-        game.isCurrentPlayerX.toggle()
         
         // Player O has to move
         game.turnMove(selectedPosition: 7)
-        game.isCurrentPlayerX.toggle()
         
         // Player X has to move
         game.turnMove(selectedPosition: 2)
-        game.isCurrentPlayerX.toggle()
-        
-        // Check Player O Loss
-        game.isWinner(player: game.playerO)
-        XCTAssertFalse(game.isGameComplted)
         
         // Check Player X WON
         game.isWinner(player: game.playerX)
@@ -96,16 +78,12 @@ class TicTacToeTests: XCTestCase {
     func testPlayerWinGameAtHorizontalTopRow() {
         // Player X has to move
         game.turnMove(selectedPosition: 1)
-        game.isCurrentPlayerX.toggle()
         // Player O has to move
         game.turnMove(selectedPosition: 4)
-        game.isCurrentPlayerX.toggle()
         // Player X has to move
         game.turnMove(selectedPosition: 2)
-        game.isCurrentPlayerX.toggle()
         // Player O has to move
         game.turnMove(selectedPosition: 5)
-        game.isCurrentPlayerX.toggle()
         // Player X has to move
         game.turnMove(selectedPosition: 3)
         // Check Player X WON at Top Row
@@ -117,19 +95,14 @@ class TicTacToeTests: XCTestCase {
 
         // Player X has to move
         game.turnMove(selectedPosition: 1)
-        game.isCurrentPlayerX.toggle()
         // Player O has to move
         game.turnMove(selectedPosition: 5)
-        game.isCurrentPlayerX.toggle()
         // Player X has to move
         game.turnMove(selectedPosition: 7)
-        game.isCurrentPlayerX.toggle()
         // Player O has to move
         game.turnMove(selectedPosition: 4)
-        game.isCurrentPlayerX.toggle()
         // Player X has to move
         game.turnMove(selectedPosition: 2)
-        game.isCurrentPlayerX.toggle()
         // Player O has to move
         game.turnMove(selectedPosition: 6)
         
@@ -140,16 +113,12 @@ class TicTacToeTests: XCTestCase {
     func testPlayerWinGameAtHorizontalBottomRow() {
         // Player X has to move
         game.turnMove(selectedPosition: 8)
-        game.isCurrentPlayerX.toggle()
         // Player O has to move
         game.turnMove(selectedPosition: 5)
-        game.isCurrentPlayerX.toggle()
         // Player X has to move
         game.turnMove(selectedPosition: 9)
-        game.isCurrentPlayerX.toggle()
         // Player O has to move
         game.turnMove(selectedPosition: 4)
-        game.isCurrentPlayerX.toggle()
         // Player X has to move
         game.turnMove(selectedPosition: 7)
         
@@ -161,16 +130,12 @@ class TicTacToeTests: XCTestCase {
     func testPlayerWinGameAtVerticallyLeftColumn() {
         // Player X has to move
         game.turnMove(selectedPosition: 1)
-        game.isCurrentPlayerX.toggle()
         // Player O has to move
         game.turnMove(selectedPosition: 2)
-        game.isCurrentPlayerX.toggle()
         // Player X has to move
         game.turnMove(selectedPosition: 4)
-        game.isCurrentPlayerX.toggle()
         // Player O has to move
         game.turnMove(selectedPosition: 5)
-        game.isCurrentPlayerX.toggle()
         // Player X has to move
         game.turnMove(selectedPosition: 7)
         
@@ -182,22 +147,16 @@ class TicTacToeTests: XCTestCase {
     func testPlayerWinGameAtVerticallyCenterColumn() {
         // Player X has to move
         game.turnMove(selectedPosition: 1)
-        game.isCurrentPlayerX.toggle()
         // Player O has to move
         game.turnMove(selectedPosition: 2)
-        game.isCurrentPlayerX.toggle()
         // Player X has to move
         game.turnMove(selectedPosition: 9)
-        game.isCurrentPlayerX.toggle()
         // Player O has to move
         game.turnMove(selectedPosition: 5)
-        game.isCurrentPlayerX.toggle()
         // Player X has to move
         game.turnMove(selectedPosition: 7)
-        game.isCurrentPlayerX.toggle()
         // Player O has to move
         game.turnMove(selectedPosition: 8)
-        game.isCurrentPlayerX.toggle()
         
         // Check Player O WON in Center Column
         game.isWinner(player: game.playerO)
@@ -207,19 +166,14 @@ class TicTacToeTests: XCTestCase {
     func testPlayerWinGameAtVerticallyRightColumn() {
         // Player X has to move
         game.turnMove(selectedPosition: 9)
-        game.isCurrentPlayerX.toggle()
         // Player O has to move
         game.turnMove(selectedPosition: 5)
-        game.isCurrentPlayerX.toggle()
         // Player X has to move
         game.turnMove(selectedPosition: 6)
-        game.isCurrentPlayerX.toggle()
         // Player O has to move
         game.turnMove(selectedPosition: 4)
-        game.isCurrentPlayerX.toggle()
         // Player X has to move
         game.turnMove(selectedPosition: 3)
-        game.isCurrentPlayerX.toggle()
         
         // Check Player X WON in Right Column
         game.isWinner(player: game.playerX)
@@ -229,16 +183,12 @@ class TicTacToeTests: XCTestCase {
     func testPlayerWinGameAtDiagonallyLeftToRight() {
         // Player X has to move
         game.turnMove(selectedPosition: 1)
-        game.isCurrentPlayerX.toggle()
         // Player O has to move
         game.turnMove(selectedPosition: 3)
-        game.isCurrentPlayerX.toggle()
         // Player X has to move
         game.turnMove(selectedPosition: 5)
-        game.isCurrentPlayerX.toggle()
         // Player O has to move
         game.turnMove(selectedPosition: 6)
-        game.isCurrentPlayerX.toggle()
         // Player X has to move
         game.turnMove(selectedPosition: 9)
         
@@ -250,22 +200,16 @@ class TicTacToeTests: XCTestCase {
     func testPlayerWinGameAtDiagonallyRightToLeft() {
         // Player X has to move
         game.turnMove(selectedPosition: 1)
-        game.isCurrentPlayerX.toggle()
         // Player O has to move
         game.turnMove(selectedPosition: 3)
-        game.isCurrentPlayerX.toggle()
         // Player X has to move
         game.turnMove(selectedPosition: 9)
-        game.isCurrentPlayerX.toggle()
         // Player O has to move
         game.turnMove(selectedPosition: 5)
-        game.isCurrentPlayerX.toggle()
         // Player X has to move
         game.turnMove(selectedPosition: 4)
-        game.isCurrentPlayerX.toggle()
         // Player O has to move
         game.turnMove(selectedPosition: 7)
-        game.isCurrentPlayerX.toggle()
         
         // Check Player O WON in Right to Left Diagonal
         game.isWinner(player: game.playerO)
@@ -276,35 +220,26 @@ class TicTacToeTests: XCTestCase {
         // Check Game Draw
         // Player X has to move
         game.turnMove(selectedPosition: 5)
-        game.isCurrentPlayerX.toggle()
         // Player O has to move
         game.turnMove(selectedPosition: 3)
-        game.isCurrentPlayerX.toggle()
         // Player X has to move
         game.turnMove(selectedPosition: 8)
-        game.isCurrentPlayerX.toggle()
         // Player O has to move
         game.turnMove(selectedPosition: 2)
-        game.isCurrentPlayerX.toggle()
         // Player X has to move
         game.turnMove(selectedPosition: 1)
-        game.isCurrentPlayerX.toggle()
         // Player O has to move
         game.turnMove(selectedPosition: 9)
-        game.isCurrentPlayerX.toggle()
         // Player X has to move
         game.turnMove(selectedPosition: 6)
-        game.isCurrentPlayerX.toggle()
         // Player O has to move
         game.turnMove(selectedPosition: 4)
-        game.isCurrentPlayerX.toggle()
         
         // Check Game has still moves (not for Draw)
         XCTAssertFalse(game.isAvailableGameDraw())
         
         // Player X has to move
         game.turnMove(selectedPosition: 7)
-        game.isCurrentPlayerX.toggle()
         
         // Check Game available for Draw
         XCTAssertTrue(game.isAvailableGameDraw())

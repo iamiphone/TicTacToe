@@ -9,7 +9,7 @@ protocol GameBoardResultDelegate {
 
 import Foundation
 struct GameLogic {
-    var arrWinPossibilities = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]]
+    var gameWinPossibilities = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]]
     var playerX = Player()
     var playerO = Player()
     var isCurrentPlayerX = true
@@ -19,15 +19,15 @@ struct GameLogic {
     // Start Game
     mutating func turnMove(selectedPosition: Int) {
         if isCurrentPlayerX {
-            playerX.addSlot(selectedPosition)
+            playerX.playerSelectedPosition(selectedPosition)
         } else {
-            playerO.addSlot(selectedPosition)
+            playerO.playerSelectedPosition(selectedPosition)
         }
         checkGameResult()
     }
     
     mutating func checkGameResult() {
-        if isGameAvailableForWinningZone() {
+        if isGameHasWinningPosiotions() {
             isWinner(player: (isCurrentPlayerX) ? playerX : playerO)
         }
         
@@ -53,7 +53,7 @@ struct GameLogic {
     
     // Check player was WON Game
     mutating func isWinner(player: Player) {
-        for win in arrWinPossibilities {
+        for win in gameWinPossibilities {
             let playerMoves: Set = Set(player.moves)
             let winningArray: Set = Set(win)
             if(winningArray.isSubset(of: playerMoves)) {
@@ -68,8 +68,8 @@ struct GameLogic {
         return isCurrentPlayerX ? PLAYER_X : PLAYER_O
     }
     
-    // Players are reached maximum game moves and game is available for draw
-    mutating func isGameAvailableForWinningZone() -> Bool {
+    // Check Game has win positions
+    mutating func isGameHasWinningPosiotions() -> Bool {
         return (playerX.moves.count + playerO.moves.count) >= GAME_REACHED_WINNING_POSSIBILITIES
     }
     
