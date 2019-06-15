@@ -12,9 +12,4 @@ struct Player {
     mutating func addSlot(_ position: Int) {
         return self.moves.append(position)
     }
-    
-    // Player Selected Positions count
-    mutating func slotsCount() -> Int {
-        return moves.count
-    }
 }

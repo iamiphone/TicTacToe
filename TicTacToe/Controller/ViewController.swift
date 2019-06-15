@@ -5,7 +5,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, GameBoardResultDelegate {
     
     @IBOutlet weak var lblResult: UILabel!
     var game = GameLogic()
@@ -13,7 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        lblResult.text = playerHasToMove()
+        lblResult.text = game.playerHasToMove()
+        game.delegate = self as GameBoardResultDelegate
     }
     
     @IBAction func startButtonPressed(_ sender: Any) {
@@ -27,25 +28,18 @@ class ViewController: UIViewController {
             btnSlot?.clearButtonContent(btnSlot!)
         }
         game.reset()
-        lblResult.text = playerHasToMove()
+        lblResult.text = game.playerHasToMove()
     }
     
     @IBAction func selectPlayerPosition(_ sender: DesignableButton) {
         sender.selectedButtonIndex(index: sender.tag, player: game.getCurrentPlayerString())
-        game.turnMove(selectedPosition: (sender.tag))
-        
-        game.isWinner(player: (game.isCurrentPlayerX) ? game.playerX : game.playerO)
-        
-        if game.isGameComplted {
-            lblResult.text = playerWon()
+        game.turnMove(selectedPosition: (sender.tag))        
+    }
+    
+    func gameResultData(resultData: String, isGameCompleted: Bool) {
+        lblResult.text = resultData
+        if isGameCompleted {
             gameFinished()
-        } else {
-            game.isCurrentPlayerX.toggle()
-            if(game.isAvailableGameDraw()) {
-                lblResult.text = MATCH_DRAWN
-            } else {
-                lblResult.text = playerHasToMove()
-            }
         }
     }
     
@@ -54,13 +48,5 @@ class ViewController: UIViewController {
             let btnSlot = self.view.viewWithTag(index) as? DesignableButton
             btnSlot?.isUserInteractionEnabled = false
         }
-    }
-    
-    func playerHasToMove() -> String {
-        return "Player-\(game.getCurrentPlayerString()) Turn ✅"
-    }
-    
-    func playerWon() -> String {
-        return "Player-\(game.getCurrentPlayerString()) has WON 👍"
     }
 }

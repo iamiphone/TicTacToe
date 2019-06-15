@@ -43,8 +43,8 @@ class TicTacToeTests: XCTestCase {
         game.isCurrentPlayerX.toggle()
         
         // Player X has 3 moves, Player O has 2 moves
-        XCTAssertTrue(game.playerX.slotsCount() == 3)
-        XCTAssertTrue(game.playerO.slotsCount() == 2)
+        XCTAssertTrue(game.playerX.moves.count == 3)
+        XCTAssertTrue(game.playerO.moves.count == 2)
     }
     
     func testGameWonByPlayerX() {
