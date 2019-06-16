@@ -11,7 +11,6 @@ class DesignableButton: UIButton {
         self.setTitle("\(player)", for: .normal)
         self.setTitleColor(.blue, for: .normal)
         self.backgroundColor = UIColor.gray
-        self.isUserInteractionEnabled = false
     }
     
     func clearButtonContent(_ : DesignableButton) {

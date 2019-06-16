@@ -30,28 +30,37 @@ class TicTacToeUITests: XCTestCase {
         XCTAssertEqual(app.buttons["topLeft"].label, "X")
     }
     
-    func testPlayerCannotSelectSamePosition() {
+    func testPlayerSelectedInValidPosition() {
         let playerSelectPosition: XCUIElement = app.buttons["topLeft"]
         playerSelectPosition.tap()
-        XCTAssertFalse(playerSelectPosition.isEnabled)
+        playerSelectPosition.tap()
+        let alert: XCUIElement = app.alerts["Invalid Selection"].buttons["OK"]
+        XCTAssertTrue(alert.isEnabled)
         XCTAssertEqual(app.staticTexts["resultLabel"].label, "Player-O Turn ✅")
         app.buttons["centerCenter"].tap()
         XCTAssertEqual(app.staticTexts["resultLabel"].label, "Player-X Turn ✅")
     }
     
-    func testHorizontallyPlayerGameWinningPossibilities() {
-        // Check Game won at Top ROW
+    func testpressStartButton() {
+        app.buttons["bottomRight"].tap()
+        app.buttons["centerCenter"].tap()
+        app.buttons["topRight"].tap()
+        app.buttons["centerRight"].tap()
+        // Start Game
+        app.buttons["startButton"].tap()
+        XCTAssertEqual(app.staticTexts["resultLabel"].label, "Player-X Turn ✅")
+    }
+    
+    func testPlayerWinGameAtHorizontalTopRow() {
         app.buttons["topLeft"].tap()
         app.buttons["centerLeft"].tap()
         app.buttons["topCenter"].tap()
         app.buttons["centerCenter"].tap()
         app.buttons["topRight"].tap()
         XCTAssertEqual(app.staticTexts["resultLabel"].label, "Player-X has WON 👍")
-        
-        // Start Game
-        app.buttons["startButton"].tap()
-        
-        // Check Game won at Center ROW
+    }
+    
+    func testPlayerWinGameAtHorizontalCenterRow() {
         app.buttons["bottomRight"].tap()
         app.buttons["centerCenter"].tap()
         app.buttons["topRight"].tap()
@@ -59,11 +68,9 @@ class TicTacToeUITests: XCTestCase {
         app.buttons["topCenter"].tap()
         app.buttons["centerLeft"].tap()
         XCTAssertEqual(app.staticTexts["resultLabel"].label, "Player-O has WON 👍")
-        
-        // Start Game
-        app.buttons["startButton"].tap()
-        
-        // Check Game won at Bottom ROW
+    }
+    
+    func testPlayerWinGameAtHorizontalBottomRow() {
         app.buttons["bottomLeft"].tap()
         app.buttons["centerCenter"].tap()
         app.buttons["bottomCenter"].tap()
@@ -72,19 +79,16 @@ class TicTacToeUITests: XCTestCase {
         XCTAssertEqual(app.staticTexts["resultLabel"].label, "Player-X has WON 👍")
     }
     
-    func testVerticallyPlayerGameWinningPossibilities() {
-        // Check Game won at Left Column
+    func testPlayerWinGameAtVerticallyLeftColumn() {
         app.buttons["topLeft"].tap()
         app.buttons["topCenter"].tap()
         app.buttons["centerLeft"].tap()
         app.buttons["bottomCenter"].tap()
         app.buttons["bottomLeft"].tap()
         XCTAssertEqual(app.staticTexts["resultLabel"].label, "Player-X has WON 👍")
-        
-        // Start Game
-        app.buttons["startButton"].tap()
-        
-        // Check Game won at Center Column
+    }
+    
+    func testPlayerWinGameAtVerticallyCenterColumn() {
         app.buttons["bottomRight"].tap()
         app.buttons["centerCenter"].tap()
         app.buttons["topRight"].tap()
@@ -92,11 +96,9 @@ class TicTacToeUITests: XCTestCase {
         app.buttons["centerLeft"].tap()
         app.buttons["bottomCenter"].tap()
         XCTAssertEqual(app.staticTexts["resultLabel"].label, "Player-O has WON 👍")
-        
-        // Start Game
-        app.buttons["startButton"].tap()
-        
-        // Check Game won at Right Column
+    }
+    
+    func testPlayerWinGameAtVerticallyRightColumn() {
         app.buttons["bottomRight"].tap()
         app.buttons["centerCenter"].tap()
         app.buttons["topRight"].tap()
@@ -105,19 +107,16 @@ class TicTacToeUITests: XCTestCase {
         XCTAssertEqual(app.staticTexts["resultLabel"].label, "Player-X has WON 👍")
     }
     
-    func testDiagonallyPlayerGameWinning() {
-        // Check Player WON in Left to Right Diagonal
+    func testPlayerWinGameAtDiagonallyLeftToRight() {
         app.buttons["topLeft"].tap()
         app.buttons["topCenter"].tap()
         app.buttons["centerCenter"].tap()
         app.buttons["centerLeft"].tap()
         app.buttons["bottomRight"].tap()
         XCTAssertEqual(app.staticTexts["resultLabel"].label, "Player-X has WON 👍")
-        
-        // Start Game
-        app.buttons["startButton"].tap()
-        
-        // Check Player WON in Right to Left Diagonal
+    }
+    
+    func testPlayerWinGameAtDiagonallyRightToLeft() {
         app.buttons["topRight"].tap()
         app.buttons["centerLeft"].tap()
         app.buttons["centerCenter"].tap()

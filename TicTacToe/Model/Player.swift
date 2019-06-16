@@ -8,8 +8,8 @@ import Foundation
 struct Player {
     var moves = [Int]()
     
-    // Adding Player positions
-    mutating func playerSelectedPosition(_ position: Int) {
+    // Add player moves
+    mutating func selectdPosition(_ position: Int) {
         return self.moves.append(position)
     }
 }
